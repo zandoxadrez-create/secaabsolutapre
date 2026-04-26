@@ -1,0 +1,161 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',sans-serif}
+.screen{background:#0a0a0a;padding:0 0 48px;overflow:hidden}
+
+.hero-img{width:100%;display:block;position:relative}
+.hero-img img{width:100%;display:block;border-radius:0}
+
+.hero-text{background:#0a0a0a;padding:28px 20px 24px;text-align:center}
+.pill-alert{display:inline-flex;align-items:center;gap:6px;background:rgba(255,59,48,0.18);border:0.5px solid rgba(255,59,48,0.4);border-radius:100px;padding:6px 14px;margin-bottom:18px}
+.pill-dot{width:7px;height:7px;background:#FF3B30;border-radius:50%}
+.pill-text{font-size:11px;font-weight:600;color:#FF3B30;letter-spacing:.07em;text-transform:uppercase}
+.hero-title{font-size:32px;font-weight:700;line-height:1.1;color:#fff;margin-bottom:10px;letter-spacing:-.5px}
+.hero-title em{font-style:normal;color:#FF3B30}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.5);line-height:1.5}
+
+.section{padding:0 16px;margin-bottom:14px}
+
+.bubble-red{background:rgba(255,59,48,0.1);border:0.5px solid rgba(255,59,48,0.25);border-radius:28px;padding:20px;margin-bottom:12px}
+.bubble-dark{background:#161616;border:0.5px solid rgba(255,255,255,0.08);border-radius:28px;padding:20px;margin-bottom:12px}
+.bubble{background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.1);border-radius:28px;padding:20px;margin-bottom:12px}
+
+.dor-title{font-size:12px;font-weight:600;color:rgba(255,59,48,.7);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px}
+.dor-text{font-size:16px;color:rgba(255,255,255,.75);line-height:1.55}
+.dor-text strong{color:#fff;font-weight:600}
+
+.produto-label{font-size:11px;font-weight:500;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;text-align:center}
+.produto-nome{font-size:26px;font-weight:700;color:#fff;text-align:center;letter-spacing:-.4px;margin-bottom:5px}
+.produto-sub{font-size:14px;color:rgba(255,255,255,.4);text-align:center}
+.linha-vermelha{width:48px;height:2px;background:#FF3B30;border-radius:2px;margin:12px auto}
+
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.stat-bub{background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.1);border-radius:22px;padding:14px 8px;text-align:center}
+.stat-n{font-size:20px;font-weight:700;color:#FF3B30;letter-spacing:-.3px}
+.stat-l{font-size:11px;color:rgba(255,255,255,.4);line-height:1.35;margin-top:3px}
+
+.lista-titulo{font-size:12px;font-weight:600;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.bitem{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.07);border-radius:18px;margin-bottom:8px}
+.bitem:last-child{margin-bottom:0}
+.b-icon{width:32px;height:32px;min-width:32px;background:rgba(255,59,48,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.b-icon svg{width:14px;height:14px}
+.bitem-text{font-size:14px;color:rgba(255,255,255,.8);line-height:1.4}
+
+.urgencia-bub{background:rgba(255,59,48,0.08);border:0.5px solid rgba(255,59,48,0.2);border-radius:24px;padding:16px 18px;text-align:center}
+.urg-title{font-size:13px;font-weight:700;color:#FF3B30;margin-bottom:4px}
+.urg-sub{font-size:13px;color:rgba(255,255,255,.4);line-height:1.4}
+
+.cta-area{padding:16px 16px 0}
+.cta-btn{display:block;width:100%;background:#FF3B30;color:#fff;font-size:17px;font-weight:700;padding:18px 24px;border:none;border-radius:100px;cursor:pointer;letter-spacing:-.2px;text-align:center;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:background .15s}
+.cta-btn:active{background:#CC2A21}
+.microcopy{text-align:center;font-size:12px;color:rgba(255,255,255,.25);margin-top:10px}
+
+.div-line{border:none;border-top:0.5px solid rgba(255,255,255,0.06);margin:24px 16px 20px}
+
+.ab-area{padding:0 16px}
+.ab-sec-label{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.2);margin-bottom:12px}
+.ab-tag{display:inline-block;background:rgba(255,59,48,0.12);color:#FF3B30;border-radius:100px;font-size:11px;font-weight:600;padding:3px 12px;margin-bottom:8px}
+.ab-hl-card{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.08);border-radius:22px;padding:16px;margin-bottom:10px}
+.ab-hl-text{font-size:15px;color:rgba(255,255,255,.75);line-height:1.45}
+.ab-cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ab-btn{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.1);border-radius:100px;padding:13px 10px;font-size:13px;font-weight:600;color:#fff;cursor:pointer;text-align:center;text-decoration:none;display:block;-webkit-tap-highlight-color:transparent;transition:background .15s}
+.ab-btn:active{background:rgba(255,59,48,0.2)}
+</style>
+
+<div class="screen">
+<h2 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Pré-página Seca Absoluta 15D</h2>
+
+<div class="hero-img">
+  <img src="/mnt/user-data/uploads/ChatGPT_Image_Apr_26__2026__08_45_52_AM.png" alt="Antes e depois — Protocolo Seca Absoluta 15D">
+</div>
+
+<div class="hero-text">
+  <div class="pill-alert">
+    <div class="pill-dot"></div>
+    <span class="pill-text">Leia antes de fechar</span>
+  </div>
+  <h1 class="hero-title">Você tentou.<br>Sofreu. Desistiu.<br><em>A culpa não foi sua.</em></h1>
+  <p class="hero-sub">Barriga presa. Roupas apertando.<br>Espelho que você evita.</p>
+</div>
+
+<div class="section">
+  <div class="bubble-red">
+    <div class="dor-title">O problema real</div>
+    <p class="dor-text">Dieta? Já fez. Academia? Já tentou. <strong>Nada funcionou porque ninguém te mostrou a sequência certa.</strong> Seu corpo não está com defeito — está esperando a virada.</p>
+  </div>
+
+  <div class="bubble-dark">
+    <div class="produto-label">O método que está mudando isso</div>
+    <div class="produto-nome">Protocolo Seca<br>Absoluta 15D</div>
+    <div class="linha-vermelha"></div>
+    <div class="produto-sub">15 dias · Sem academia · Sem fome</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="stats">
+    <div class="stat-bub"><div class="stat-n">15</div><div class="stat-l">dias para sentir</div></div>
+    <div class="stat-bub"><div class="stat-n">4.2k</div><div class="stat-l">pessoas que aplicaram</div></div>
+    <div class="stat-bub"><div class="stat-n">100%</div><div class="stat-l">em casa</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="bubble">
+    <div class="lista-titulo">O que você conquista</div>
+    <div class="bitem">
+      <div class="b-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L5.5 10L11 4" stroke="#FF3B30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="bitem-text">Desincha rápido — sente na primeira semana</span>
+    </div>
+    <div class="bitem">
+      <div class="b-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L5.5 10L11 4" stroke="#FF3B30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="bitem-text">Barriga menor sem passar fome</span>
+    </div>
+    <div class="bitem">
+      <div class="b-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L5.5 10L11 4" stroke="#FF3B30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="bitem-text">Metabolismo que voltou a funcionar</span>
+    </div>
+    <div class="bitem">
+      <div class="b-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L5.5 10L11 4" stroke="#FF3B30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="bitem-text">Sem academia pesada — cabe em qualquer rotina</span>
+    </div>
+    <div class="bitem">
+      <div class="b-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7.5L5.5 10L11 4" stroke="#FF3B30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="bitem-text">Começa hoje, em casa, do zero</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="urgencia-bub">
+    <div class="urg-title">Acesso liberado por tempo limitado</div>
+    <div class="urg-sub">Método pouco divulgado.<br>Não sabemos até quando fica disponível.</div>
+  </div>
+</div>
+
+<div class="cta-area">
+  <a class="cta-btn" href="https://secaabsoluta.netlify.app/" target="_blank">Quero ver o protocolo agora →</a>
+  <div class="microcopy">Acesso imediato · Garantia 7 dias · Sem risco</div>
+</div>
+
+<hr class="div-line">
+
+<div class="ab-area">
+  <div class="ab-sec-label">Teste A/B — Headlines</div>
+  <div class="ab-hl-card">
+    <div class="ab-tag">Variante A</div>
+    <p class="ab-hl-text">Você não falhou. Você foi enganado por método que nunca ia funcionar. Isso muda agora.</p>
+  </div>
+  <div class="ab-hl-card">
+    <div class="ab-tag">Variante B</div>
+    <p class="ab-hl-text">Cada dieta que não funcionou foi mais um ano perdido. Chega. 15 dias provam que você pode.</p>
+  </div>
+  <div class="ab-sec-label" style="margin-top:16px">Teste A/B — CTAs</div>
+  <div class="ab-cta-row">
+    <a class="ab-btn" href="https://secaabsoluta.netlify.app/" target="_blank">Mostrar o método →</a>
+    <a class="ab-btn" href="https://secaabsoluta.netlify.app/" target="_blank">Começar hoje →</a>
+  </div>
+</div>
+
+</div>
